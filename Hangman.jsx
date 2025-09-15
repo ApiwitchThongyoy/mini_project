@@ -54,7 +54,7 @@ export default function Hangman() {
 
   return (
     <div style={{ textAlign: "center", fontFamily: "sans-serif", marginTop: 24 }}>
-      <h1>🎮 Hangman</h1>
+      <h1> Hangman</h1>
 
       {/* SVG drawing */}
       <HangmanDrawing wrong={wrong} />
