@@ -1,4 +1,3 @@
-// HangmanGame.js
 export default class HangmanGame {
   constructor(words, maxAttempts = 6) {
     this.words = words;

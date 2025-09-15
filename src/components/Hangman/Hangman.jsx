@@ -57,7 +57,7 @@ export default function Hangman() {
         </div>
       )}
 
-      {/* แสดงข้อความชนะ */}
+      {/* ข้อความชนะ */}
       {game.isWon() && (
         <div className="mt-4">
           <h2 className="text-green-600 text-2xl mb-2">
@@ -72,7 +72,7 @@ export default function Hangman() {
         </div>
       )}
 
-      {/* แสดงข้อความแพ้ */}
+      {/* ข้อความแพ้ */}
       {game.isLost() && (
         <div className="mt-4">
           <h2 className="text-red-600 text-2xl mb-2">
