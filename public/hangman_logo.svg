@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="80" viewBox="0 0 400 80">
+  <!-- กล่องพื้นหลัง -->
+  <rect x="0" y="0" width="400" height="80" rx="12" ry="12" fill="#1f2937"/>
+
+  <!-- โลโก้/ไอคอน stickman -->
+  <g transform="translate(20,15)" stroke="#f87171" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- head -->
+    <circle cx="20" cy="15" r="10" fill="none"/>
+    <!-- body -->
+    <line x1="20" y1="25" x2="20" y2="50"/>
+    <!-- arms -->
+    <line x1="5" y1="35" x2="35" y2="35"/>
+    <!-- legs -->
+    <line x1="20" y1="50" x2="8" y2="70"/>
+    <line x1="20" y1="50" x2="32" y2="70"/>
+  </g>
+
+  <!-- ข้อความ -->
+  <text x="80" y="50" font-size="28" font-family="Arial, sans-serif" fill="#ffffff" font-weight="bold">
+    HANGMAN
+  </text>
+</svg>
