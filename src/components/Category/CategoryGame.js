@@ -1,4 +1,3 @@
-// CategoryGame.js
 import { HangmanGame } from "./HangmanGame";
 
 // Encapsulation + Inheritance

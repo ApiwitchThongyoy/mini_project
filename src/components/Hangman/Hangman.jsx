@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import HangmanGame from "./HangmanGame";
 import HangmanDrawing from "./HangmanDrawing";
-import { ImCross } from "react-icons/im";
+import { BsArrowLeftCircleFill } from "react-icons/bs";
 
 
 function HangmanGameSnapshot(gameObj) {
@@ -35,9 +35,9 @@ export default function Hangman() {
 
   return (
     <div>
-      <button onClick={() => {}} className="absolute mt-5 ml-5 text-5xl cursor-pointer">
-        <ImCross />
-      </button>
+       <button class="mt-5 ml-5 text-6xl cursor-pointer z-50">
+          <BsArrowLeftCircleFill />
+        </button>
 
       <div className="text-center font-sans">
         {/* หัวข้อเกม */}
