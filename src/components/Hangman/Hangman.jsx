@@ -1,6 +1,6 @@
 // Hangman.jsx
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import HangmanGame from "./HangmanGame";
 import HangmanDrawing from "./HangmanDrawing";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
@@ -12,6 +12,7 @@ function HangmanGameSnapshot(gameObj) {
 
 export default function Hangman() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { category, words } = location.state || { category: "Default", words: ["apple", "banana", "melon"] };
 
 
@@ -35,7 +36,9 @@ export default function Hangman() {
 
   return (
     <div>
-       <button class="mt-5 ml-5 text-6xl cursor-pointer z-50">
+       <button class="mt-5 ml-5 text-6xl cursor-pointer z-50"
+        onClick={() => navigate("/Category")}
+        >
           <BsArrowLeftCircleFill />
         </button>
 
