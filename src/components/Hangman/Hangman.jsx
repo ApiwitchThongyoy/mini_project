@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+<<<<<<< Updated upstream
+=======
+import { useLocation,useNavigate } from "react-router-dom";
+>>>>>>> Stashed changes
 import HangmanGame from "./HangmanGame";
 import HangmanDrawing from "./HangmanDrawing";
 
@@ -10,7 +14,13 @@ function HangmanGameSnapshot(gameObj) {
 }
 
 export default function Hangman() {
+<<<<<<< Updated upstream
   const [game, setGame] = useState(new HangmanGame(words));
+=======
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { category, words } = location.state || { category: "Default", words: ["apple", "banana", "melon"] };
+>>>>>>> Stashed changes
 
   // ฟังก์ชันเมื่อกดปุ่มตัวอักษร
   function handleGuess(letter) {
@@ -25,9 +35,19 @@ export default function Hangman() {
   }
 
   return (
+<<<<<<< Updated upstream
     <div className="text-center font-sans">
       {/* หัวข้อเกม */}
       <h1 className="text-6xl font-bold mb-4">Hang man</h1>
+=======
+    <div>
+       <button class="mt-5 ml-5 text-6xl cursor-pointer z-50"
+        onClick={() => navigate("/Category")} 
+        >
+
+          <BsArrowLeftCircleFill />
+        </button>
+>>>>>>> Stashed changes
 
       {/* รูปแขวน */}
       <HangmanDrawing wrong={game.wrong} />
