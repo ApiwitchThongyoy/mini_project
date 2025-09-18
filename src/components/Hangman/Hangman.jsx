@@ -26,8 +26,8 @@ export default function Hangman() {
 
   return (
     <div>
-      {/* ปุ่มปิด */}
-      <button className="absolute top-4 right-20 text-6xl text-[#164C11] cursor-pointer z-50">
+      
+      <button onClick={() => {}} className="absolute mt-5 ml-5  text-5xl  cursor-pointer">
         <ImCross />
       </button>
 
