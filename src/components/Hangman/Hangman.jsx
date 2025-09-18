@@ -1,18 +1,27 @@
+// Hangman.jsx
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import HangmanGame from "./HangmanGame";
 import HangmanDrawing from "./HangmanDrawing";
 import { ImCross } from "react-icons/im";
 
-const words = ["apple", "pieapple", "banana", "watermelon", "melon"];
 
 function HangmanGameSnapshot(gameObj) {
   return Object.assign(Object.create(HangmanGame.prototype), gameObj);
 }
 
 export default function Hangman() {
-  const [game, setGame] = useState(new HangmanGame(words));
+  const location = useLocation();
+  const { category, words } = location.state || { category: "Default", words: ["apple", "banana", "melon"] };
 
-  // ฟังก์ชันเมื่อกดปุ่มตัวอักษร
+
+  const [game, setGame] = useState(() => {
+    const g = new HangmanGame(words);
+    g.category = category;
+    return g;
+  });
+
+  // ฟังก์ชันเมื่อกดตัวอักษร
   function handleGuess(letter) {
     game.guess(letter);
     setGame(HangmanGameSnapshot(game));
@@ -26,14 +35,13 @@ export default function Hangman() {
 
   return (
     <div>
-      
-      <button onClick={() => {}} className="absolute mt-5 ml-5  text-5xl  cursor-pointer">
+      <button onClick={() => {}} className="absolute mt-5 ml-5 text-5xl cursor-pointer">
         <ImCross />
       </button>
 
       <div className="text-center font-sans">
         {/* หัวข้อเกม */}
-        <h1 className="text-6xl font-bold mb-4">Hangman</h1>
+        <h1 className="text-6xl font-bold mb-4">Hangman - หมวดหมู่: {game.category}</h1>
 
         {/* รูปแขวน */}
         <HangmanDrawing wrong={game.wrong} />
@@ -43,10 +51,10 @@ export default function Hangman() {
 
         {/* จำนวนครั้งผิด */}
         <p className="mt-4 text-3xl">
-          Missed : {game.wrong}/{game.maxAttempts}
+          Missed: {game.wrong}/{game.maxAttempts}
         </p>
 
-        {/* ปุ่มตัวอักษร */}
+      {/* ปุ่มตัวอักษร */}
         {!game.isGameOver() && (
           <div className="max-w-xl mx-auto mt-4 grid grid-cols-7 gap-2">
             {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => {
@@ -70,12 +78,11 @@ export default function Hangman() {
             })}
           </div>
         )}
-
         {/* ข้อความชนะ */}
         {game.isWon() && (
           <div className="mt-10 text-3xl">
             <h2 className="text-green-600 text-2xl mb-2">
-              YOU WIN!! THE ANSWER IS : {game.word}
+              YOU WIN!! THE ANSWER IS: {game.word}
             </h2>
             <button
               onClick={resetGame}
@@ -90,7 +97,7 @@ export default function Hangman() {
         {game.isLost() && (
           <div className="mt-10 text-3xl">
             <h2 className="text-red-600 text-2xl mb-2">
-              YOU LOSE!! THE ANSWER IS : {game.word}
+              YOU LOSE!! THE ANSWER IS: {game.word}
             </h2>
             <button
               onClick={resetGame}
