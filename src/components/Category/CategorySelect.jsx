@@ -6,9 +6,24 @@ export default function CategorySelect() {
   const navigate = useNavigate();
 
   const categories = {
-    Fruits: ["apple", "banana", "grape", "watermelon"],
-    Animals: ["tiger", "elephant", "cat", "dog"],
-    Countries: ["thailand", "japan", "france", "brazil"],
+    Fruits: [
+      "apple", "banana", "grape", "watermelon", "orange", "mango",
+      "pineapple", "strawberry", "lemon", "peach", "papaya", "lychee",
+      "dragonfruit", "rambutan", "durian", "mangosteen", "passionfruit",
+      "jackfruit", "blueberry", "raspberry", "blackberry", "cranberry"
+    ],
+    Animals: [
+      "dog", "cat", "lion", "tiger", "elephant", "giraffe", "monkey",
+      "bear", "zebra", "wolf", "fox", "rabbit", "kangaroo", "panda",
+      "horse", "cow", "sheep", "goat", "chicken", "duck", "pig",
+      "camel", "snake", "frog"
+    ],
+    Countries: [
+      "thailand", "united states", "united kingdom", "canada", "australia",
+      "china", "japan", "south korea", "india", "germany", "france", "italy",
+      "spain", "russia", "brazil", "mexico", "argentina", "south africa",
+      "egypt", "nigeria", "saudi arabia", "turkey", "sweden", "norway", "netherlands"
+    ],
   };
 
   const handleSelect = (category, words) => {
@@ -32,7 +47,7 @@ export default function CategorySelect() {
             <button
               key={category}
               onClick={() => handleSelect(category, words)}
-              className="px-20 py-5 bg-lime-500 text-white text-lg rounded-lg 
+              className="px-20 py-5 bg-lime-500 text-white text-lg rounded-lg
                          hover:bg-lime-600 transition duration-200 cursor-pointer font-bold"
             >
               {category}
