@@ -34,7 +34,7 @@ export default function CategorySelect() {
     <>
       <button
         className="absolute top-4 left-4 text-6xl cursor-pointer z-50"
-        onClick={() => navigate(-1)}
+        onClick={() => navigate("/")}
       >
         <BsArrowLeftCircleFill />
       </button>
