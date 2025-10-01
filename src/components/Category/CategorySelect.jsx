@@ -8,9 +8,8 @@ export default function CategorySelect() {
   const categories = {
     Fruits: [
       "apple", "banana", "grape", "watermelon", "orange", "mango",
-      "pineapple", "strawberry", "lemon", "peach", "papaya", "lychee",
-      "dragonfruit", "rambutan", "durian", "mangosteen", "passionfruit",
-      "jackfruit", "blueberry", "raspberry", "blackberry", "cranberry"
+      "pineapple","strawberry","lemon","peach", "papaya", "lychee",
+      "dragonfruit","durian","blueberry","cranberry"
     ],
     Animals: [
       "dog", "cat", "lion", "tiger", "elephant", "giraffe", "monkey",
@@ -19,10 +18,10 @@ export default function CategorySelect() {
       "camel", "snake", "frog"
     ],
     Countries: [
-      "thailand", "united states", "united kingdom", "canada", "australia",
-      "china", "japan", "south korea", "india", "germany", "france", "italy",
-      "spain", "russia", "brazil", "mexico", "argentina", "south africa",
-      "egypt", "nigeria", "saudi arabia", "turkey", "sweden", "norway", "netherlands"
+      "thailand","USA", "UK", "canada", "australia",
+      "china","japan","south korea","india","germany","france","italy",
+      "spain","russia", "brazil", "mexico", "argentina","egypt",
+      "sweden", "norway", "netherlands"
     ],
   };
 
