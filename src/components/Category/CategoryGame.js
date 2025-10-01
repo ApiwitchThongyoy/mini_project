@@ -1,6 +1,5 @@
 import { HangmanGame } from "./HangmanGame";
 
-// Encapsulation + Inheritance
 export class CategoryGame extends HangmanGame {
   constructor(category, words, maxAttempts = 6) {
     const randomWord =
@@ -9,7 +8,6 @@ export class CategoryGame extends HangmanGame {
     this.category = category;
   }
 
-  // Polymorphism
   getCategory() {
     return this.category;
   }
